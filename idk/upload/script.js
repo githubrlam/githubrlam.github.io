@@ -1,6 +1,7 @@
 // 簡化版本 - 移除惡意防護功能
 let canLeave = false;
 let attemptCount = 0;
+let modalShown = false; // 記錄彈出視窗是否已經顯示過
 
 // 嘗試離開的函數（簡化版）
 function attemptToLeave() {
@@ -47,6 +48,13 @@ window.addEventListener("beforeunload", function (e) {
 
 // 顯示彈出視窗
 function showModal() {
+  // 如果彈出視窗已經顯示過，就不再顯示
+  if (modalShown) {
+    alert("我已經向你道歉過了，請考慮原諒我... 🥺");
+    return;
+  }
+
+  modalShown = true; // 標記彈出視窗已顯示
   document.getElementById("modal").style.display = "flex";
 }
 
@@ -173,6 +181,6 @@ window.onload = function () {
         document.title = titleMessages[titleIndex % titleMessages.length];
         titleIndex++;
       }
-    }, 3000); // 改為3秒一次
+    }, 10000); // 改為3秒一次
   }
 };
