@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我很抱歉</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>    <div class="container">
+      <h1>我很抱歉 😔</h1>
+      
+      <!-- 上方圖片展示區 -->
+      <div class="image-gallery top-gallery">
+        <div class="image-item">
+          <img src="img1.png" alt="回憶1" />
+        </div>
+        <div class="image-item">
+          <img src="img2.png" alt="回憶2" />
+        </div>
+        <div class="image-item">
+          <img src="img3.png" alt="回憶3" />
+        </div>
+        <div class="image-item">
+          <img src="img4.png" alt="回憶4" />
+        </div>
+      </div>
+      
+      <div class="message">
+        親愛的月亮，<br />
+        我知道我做錯了事情，<br />
+        下次你在上班不會打擾你了，<br />
+        我下次不會給妳打騷擾電話了，<br />
+        我真的非常非常抱歉...<br />
+        請原諒我好嗎？
+      </div>
+      
+      <div class="heart">💔</div>
+      <button class="agree-btn" onclick="showModal()">我想聽你的回應</button>
+      <button class="leave-btn" onclick="attemptToLeave()">我想離開</button>
+      
+      <!-- 下方圖片展示區 -->
+      <div class="image-gallery bottom-gallery">
+        <div class="image-item">
+          <img src="img5.png" alt="回憶5" />
+        </div>
+        <div class="image-item">
+          <img src="img6.png" alt="回憶6" />
+        </div>
+        <div class="image-item">
+          <img src="img7.png" alt="回憶7" />
+        </div>
+        <div class="image-item">
+          <img src="img8.png" alt="回憶8" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 彈出視窗 -->
+    <div id="modal" class="modal-overlay" style="display: none">
+      <div class="modal">
+        <h2>你願意原諒我嗎？ 🥺</h2>
+        <p>
+          我會努力改正，不會再犯同樣的錯誤。<br />請給我一個機會證明我的誠意。
+        </p>
+        <button class="modal-btn" onclick="forgiveMe()">我原諒你 🤝</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
