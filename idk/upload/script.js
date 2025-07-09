@@ -118,8 +118,104 @@ function showReminder() {
   }
 }
 
+// 創建圖片放大預覽功能
+function createImageModal() {
+  // 創建放大預覽的模態框
+  const imageModal = document.createElement("div");
+  imageModal.id = "imageModal";
+  imageModal.style.cssText = `
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+  `;
+
+  const modalImg = document.createElement("img");
+  modalImg.id = "modalImage";
+  modalImg.style.cssText = `
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+  `;
+
+  const closeBtn = document.createElement("span");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.style.cssText = `
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  `;
+
+  const caption = document.createElement("div");
+  caption.id = "caption";
+  caption.style.cssText = `
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+  `;
+
+  imageModal.appendChild(modalImg);
+  imageModal.appendChild(closeBtn);
+  imageModal.appendChild(caption);
+  document.body.appendChild(imageModal);
+
+  // 關閉功能
+  closeBtn.onclick = function () {
+    imageModal.style.display = "none";
+  };
+
+  imageModal.onclick = function (e) {
+    if (e.target === imageModal) {
+      imageModal.style.display = "none";
+    }
+  };
+
+  // ESC 鍵關閉
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      imageModal.style.display = "none";
+    }
+  });
+
+  return { imageModal, modalImg, caption };
+}
+
 // 圖片互動效果
 document.addEventListener("DOMContentLoaded", function () {
+  // 創建圖片放大模態框
+  const { imageModal, modalImg, caption } = createImageModal();
+
   // 為圖片添加點擊效果
   const images = document.querySelectorAll(".image-item img");
 
@@ -138,9 +234,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let message =
         imageMessages[index] || "每一張照片都是我們友誼的見證... 📸";
-      alert(message);
 
-      // 圖片被點擊時的溫和特效
+      // 顯示放大的圖片
+      modalImg.src = this.src;
+      caption.innerHTML = `<strong>${this.alt}</strong><br><br>${message}`;
+      imageModal.style.display = "block";
+
+      // 圖片被點擊時的溫和特效（在原圖上）
       this.style.transform = "scale(1.05)";
       this.style.filter = "brightness(1.1)";
 
@@ -181,6 +281,6 @@ window.onload = function () {
         document.title = titleMessages[titleIndex % titleMessages.length];
         titleIndex++;
       }
-    }, 10000); // 改為3秒一次
+    }, 3000); // 改為3秒一次
   }
 };
