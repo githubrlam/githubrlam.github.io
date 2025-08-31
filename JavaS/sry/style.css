@@ -24,6 +24,36 @@ body {
   position: relative;
 }
 
+/* 每個分頁主背景不同 */
+#page1 {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+#page2 {
+  background: linear-gradient(135deg, #fdf6e3 0%, #fceabb 100%);
+}
+#page3 {
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+#page4 {
+  background: linear-gradient(135deg, #f8ffae 0%, #43cea2 100%);
+}
+#page5 {
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+#page6 {
+  background: linear-gradient(135deg, #d9afd9 0%, #97d9e1 100%);
+}
+#page7 {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}
+#page8 {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+#page9 {
+  background: linear-gradient(135deg, #fbc2eb 0%, #fceabb 100%);
+}
+
+
 .page {
   display: none;
   animation: fadeIn 0.8s ease-in-out;
