@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>對不起...</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page active" id="page1">
+        <div class="content">
+          <h1>我們的相遇</h1>
+          <div class="apology-text">
+            <p>相遇本來是美好的，謝謝。</p>
+            <p>我現在對你的印象是一個美女，一個長得像劉亦菲的美女</p>
+            <p>可能帶點傷感，因為我不知道你跟美國那個怎麼了</p>
+            <p>沒有任何負面的情緒，沒有要噁心的意思，只是單純的想念</p>
+          </div>
+          <div class="heart">🤝</div>
+          <button class="next-btn" onclick="nextPage()">下一頁</button>
+        </div>
+      </div>
+
+      <div class="page" id="page2">
+        <div class="content">
+          <h1>我的性格</h1>
+          <div class="apology-text">
+            <p>我性格孤僻，常常不懂得怎麼和人相處</p>
+            <p>有時候太過自我，忽略了別人的感受</p>
+            <p>有可能噁心到你了，對不起</p>
+          </div>
+          <div class="heart">🥲</div>
+          <button class="next-btn" onclick="nextPage()">下一頁</button>
+        </div>
+      </div>
+
+      <div class="page" id="page3">
+        <div class="content">
+          <h1>第一次的爭執</h1>
+          <div class="apology-text">
+            <p>第一次一起打遊戲時，我因為情緒失控對你發了脾氣</p>
+            <p>你掛了電話，遊戲也掛機了</p>
+            <p>那一刻我才發現自己做錯了，但你已經拉黑了我</p>
+            <p>我真的很後悔，後來一直想跟你道歉</p>
+          </div>
+          <div class="heart">😭</div>
+          <button class="next-btn" onclick="nextPage()">下一頁</button>
+        </div>
+      </div>
+
+      <div class="page" id="page4">
+        <div class="content">
+          <h1>第二次的傷害</h1>
+          <div class="apology-text">
+            <p>後來好不容易又聯絡上你</p>
+            <p>沒想到第二次又因為一點小事和你吵了起來</p>
+            <p>有可能是沒人給我轉過奶茶錢，然後我給我兄弟轉的也是那麼多</p>
+            <p>
+              當時我說了很難聽的話，現在想起來真的很不應該，而且沒有那個必要
+            </p>
+            <p>真的很對不起</p>
+          </div>
+          <div class="heart">😢</div>
+          <button class="next-btn" onclick="nextPage()">下一頁</button>
+        </div>
+      </div>
+
+      <div class="page" id="page5">
+        <div class="content">
+          <h1>後悔與自省</h1>
+          <div class="apology-text">
+            <p>我現在回想起來，真的很後悔當時的衝動和不成熟。</p>
+            <p>ID是我年初改的，我借了我朋友的號加了你，但是你沒同意</p>
+            <p>
+              好像是這樣子的情況下才改的吧，但是，這次你把我拉出來真的很難得
+            </p>
+            <p>如果讓你想起不開心的，對不起，但是我這次真沒有惡意</p>
+          </div>
+          <div class="heart broken-heart">🙁</div>
+          <button class="next-btn" onclick="nextPage()">下一頁</button>
+        </div>
+      </div>
+
+      <div class="page" id="page6">
+        <div class="content">
+          <h1>珍惜這段友情</h1>
+          <div class="apology-text">
+            <p>我那時候可能沒那麼的執著</p>
+            <p>你在廈門打電話的那時候，我可能嘴癮表現得不想打電話</p>
+            <p>
+              後來，我才發現自己錯過了什麼，喜歡打電話，缺只有在和兄弟打遊戲的時候才有那個機會？
+            </p>
+            <p>我很希望我們能和好如初，可以的話繼續做彼此的朋友</p>
+          </div>
+          <div class="heart">🥺</div>
+          <button class="next-btn" onclick="nextPage()">下一頁</button>
+        </div>
+      </div>
+
+      <div class="page" id="page7">
+        <div class="content">
+          <h1>真誠的道歉</h1>
+          <div class="apology-text">
+            <p>說真的，你把我拉出來的時候真的很開心，非常的開心</p>
+            <p>直到妳說「我忘記了」「我不想閒聊」「你找別人吧」，有點傷心</p>
+            <p>你變了很多啊，我很害怕，害怕你又把我拉黑</p>
+            <p>如果打擾到你，對不起，但我真的沒有惡意</p>
+            <p>我只想和你好好聊聊，希望你可以考慮一下下</p>
+          </div>
+          <div class="heart">🙏</div>
+          <button class="next-btn" onclick="nextPage()">下一頁...</button>
+        </div>
+      </div>
+
+      <div class="page" id="page8">
+        <div class="content">
+          <h1>最後的獨白</h1>
+          <div class="apology-text">
+            <p>妳說妳不想閒聊，不知道是你經歷了什麼傷心事，還是說是我的問題</p>
+            <p>如果你經歷了不開心的，說來聽聽唄，我也經歷過，我願意聽</p>
+            <p>如果是我的問題，我在這裡給你鄭重道個歉，對不起，以後不打擾你了</p>
+          </div>
+          <div class="heart">😞</div>
+          <button class="next-btn" onclick="nextPage()">最後請求...</button>
+        </div>
+      </div>
+
+      <div class="page" id="page9">
+        <div class="content">
+          <h1>還能當朋友嗎？</h1>
+          <div class="apology-text">
+            <p>說實話，微信那個紀錄，雖然說是平板延遲，雖然你話難聽，</p>
+            <p>我一直沒捨得去刪，所以才有前天那個圖片，</p>
+            
+            <p>但如果你願意給我們的友情一次機會</p>
+            <p>我會用心去維護這段友誼</p>
+          </div>
+          <div class="heart love-heart">🤝</div>
+          <div class="final-question">
+            <p>你願意原諒我，繼續做朋友嗎？</p>
+            <div class="choice-buttons">
+              <button class="yes-btn" onclick="showForgiveness()">
+                我願意
+              </button>
+              <button class="no-btn" onclick="showSadness()">
+                拒絕（————別拒絕好不好）
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="forgiveness">
+        <div class="content">
+          <h1>謝謝你！</h1>
+          <div class="apology-text">
+            <p>謝謝你願意原諒我</p>
+            <p>我會珍惜這次機會</p>
+            <p>我會用行動證明我對友情的重視</p>
+            <p>謝謝你，朋友 🤗</p>
+          </div>
+          <div class="celebration">
+            <div class="heart">🎉</div>
+            <div class="heart">💖</div>
+            <div class="heart">🎊</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="sadness">
+        <div class="content">
+          <h1>我理解...</h1>
+          <div class="apology-text">
+            <p>我理解你還需要時間</p>
+            <p>我會等你</p>
+            <p>無論多久</p>
+            <p>我都希望有一天我們能和好如初</p>
+          </div>
+          <div class="heart">😔</div>
+          <button class="retry-btn" onclick="restart()">重新開始</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="page-indicator" id="pageIndicator">1 / 8</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
