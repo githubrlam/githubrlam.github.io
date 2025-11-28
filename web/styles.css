@@ -1,18 +1,19 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background: #ffe4e1; /* Lighter pink background */
   color: #333;
 }
 
 header {
-  background-color: #ffcccb;
+  background: #ffb6c1; /* Lighter pink header */
   color: #fff;
   text-align: center;
   padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -20,8 +21,86 @@ h1 {
   margin: 0;
 }
 
+.sidebar-button {
+  position: fixed; /* Change to fixed to follow the sidebar */
+  top: 1rem;
+  left: 1rem;
+  background: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease, left 0.3s ease; /* Added left transition */
+  z-index: 1100; /* Ensure it stays above the sidebar */
+}
+
+.sidebar-button:hover {
+  background: #ffb6c1;
+  transform: scale(1.1);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 160px; /* Reduced width for a narrower sidebar */
+  height: 100%;
+  background: #ffe4e1; /* Lighter pink sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  padding: 1rem;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.sidebar nav {
+  margin-top: 4rem; /* Move the options lower to avoid overlap with the toggle button */
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: #ff6f91;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar.open + .sidebar-button {
+  left: 170px; /* Adjust button position to match the new sidebar width */
+}
+
+/* Adjusting layout for sidebar pop-up */
+main {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.sidebar.open ~ main {
+  margin-left: 160px; /* Adjust main content shift to match the new sidebar width */
+}
+
 main {
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 section {
@@ -45,11 +124,12 @@ h2 {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #ffcccb;
+  background: #ffb6c1; /* Lighter pink footer */
   color: #fff;
   position: relative;
   bottom: 0;
   width: 100%;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Cute Elements */

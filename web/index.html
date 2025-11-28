@@ -5,28 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chinese Modern Wisdom</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" type="module"></script>
   </head>
   <body>
     <header>
       <h1>Chinese Modern Wisdom</h1>
+      <button id="sidebar-toggle" class="sidebar-button">☰</button>
     </header>
 
-    <main>
+    <aside id="sidebar" class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="episode1.html">Episode 1</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="home">
       <section id="introduction">
-        <h2>Introduction</h2>
+        <h2>About Our Show</h2>
         <p>
-          Hello, and welcome back to <strong>Chinese Modern Wisdom</strong>, a
-          podcast where we discuss all the fun and exciting contemporary issues
-          in China. Today, we will zoom in specifically on queer men to see how
-          masculine expectations might treat them slightly differently.
+          Welcome to <strong>Chinese Modern Wisdom</strong>, a podcast where we
+          explore contemporary issues in China through the lens of culture,
+          society, and identity. Join us as we dive into thought-provoking
+          topics and uncover the stories that shape modern Chinese life.
         </p>
       </section>
 
-      <section id="video">
-        <h2>Watch Our Latest Episode</h2>
+      <section id="latest-episode">
+        <h2>Latest Episode: Sham Marriages</h2>
+        <p>
+          In this episode, we delve into the world of sham marriages, also known
+          as 騙婚. These arrangements, where a gay man and a straight woman
+          enter a heterosexual marriage, highlight the immense societal
+          pressures faced by queer men in China. We discuss the cultural
+          expectations, personal struggles, and the impact of these marriages on
+          individuals and society.
+        </p>
+        <p>
+          Watch the video below to learn more about this complex and deeply
+          personal topic.
+        </p>
         <div id="video-container">
-          <!-- Embed video here -->
           <iframe
+            id="video-player"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/kJv8amc2ppM?si=I_s-J7ScVC7uO65R"
@@ -36,32 +60,20 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
-          <!-- 
-          <iframe
-            width="560"
-            height="315"
-            src=""
-            frameborder="0"
-            allowfullscreen
-          ></iframe> -->
+          <p id="backup-link" style="display: none">
+            If the video doesn't load, you can watch it directly on
+            <a
+              href="https://www.youtube.com/watch?v=kJv8amc2ppM"
+              target="_blank"
+              >YouTube</a
+            >.
+          </p>
         </div>
-      </section>
-
-      <section id="about">
-        <h2>About Sham Marriages</h2>
-        <p>
-          Sham marriages, also known as 騙婚, are arrangements where a gay man
-          and a straight woman form a heterosexual marriage, often concealing
-          the husband's sexuality. This practice highlights the immense societal
-          pressures faced by queer men in China.
-        </p>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2025 Chinese Modern Wisdom. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
