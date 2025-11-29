@@ -27,16 +27,16 @@ if (videoPlayer) {
 }
 
 // Sidebar toggle functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const sidebar = document.getElementById('sidebar');
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
 
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        if (sidebar.classList.contains('open')) {
-            sidebarToggle.textContent = '✖'; // Change button to close icon
-        } else {
-            sidebarToggle.textContent = '☰'; // Change button back to menu icon
-        }
-    });
+  sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    if (sidebar.classList.contains("open")) {
+      sidebarToggle.textContent = "✖"; // Change button to close icon
+    } else {
+      sidebarToggle.textContent = "☰"; // Change button back to menu icon
+    }
+  });
 });
