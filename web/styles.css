@@ -11,7 +11,7 @@
   /* Pink Theme Palette */
   --primary-color: #ff8da1; /* Soft Cute Pink */
   --primary-light: #ffd1dc; /* Pastel Pink */
-  --primary-dark: #ff5c8d; /* Vibrant Pink */
+  --primary-dark: #ff8da1; /* Vibrant Pink */
   --accent-color: #ffb7b2; /* Salmon Pink Accent */
   --background-color: #fff0f5; /* Lavender Blush Background */
   --surface-color: #ffffff; /* White Surface */
@@ -34,11 +34,7 @@ body {
 
 /* Header Styling */
 header {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--primary-dark)
-  );
+  background: linear-gradient(135deg, #ff8da1, #ffb6c1);
   color: white;
   padding: 1rem 2rem;
   display: flex;
