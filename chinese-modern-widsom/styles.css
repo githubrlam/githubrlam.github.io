@@ -1,147 +1,233 @@
-/* General Styles */
-body {
-  font-family: "Roboto", sans-serif;
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: #ffe4e1; /* Lighter pink background */
-  color: #333;
 }
 
+:root {
+  /* Pink Theme Palette */
+  --primary-color: #ff8da1; /* Soft Cute Pink */
+  --primary-light: #ffd1dc; /* Pastel Pink */
+  --primary-dark: #ff8da1; /* Vibrant Pink */
+  --accent-color: #ffb7b2; /* Salmon Pink Accent */
+  --background-color: #fff0f5; /* Lavender Blush Background */
+  --surface-color: #ffffff; /* White Surface */
+  --text-color: #333333; /* Dark Text */
+  --text-light: #000000; /* Lighter Text */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styling */
 header {
-  background: #ffb6c1; /* Lighter pink header */
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff8da1, #ffb6c1);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin: 0;
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .sidebar-button {
-  position: fixed; /* Change to fixed to follow the sidebar */
-  top: 1rem;
-  left: 1rem;
-  background: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
+  order: -1;
+  background: white;
+  border: 2px solid white;
+  color: var(--primary-color);
   font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.3s ease, left 0.3s ease; /* Added left transition */
-  z-index: 1100; /* Ensure it stays above the sidebar */
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar-button:hover {
-  background: #ffb6c1;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Sidebar Styling */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -300px;
-  width: 160px; /* Reduced width for a narrower sidebar */
+  left: -250px; /* Hidden by default */
+  width: 250px;
   height: 100%;
-  background: #ffe4e1; /* Lighter pink sidebar */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  transition: left 0.3s ease;
-  padding: 1rem;
-  z-index: 1000; /* Ensure it stays above other elements */
-}
-
-.sidebar nav {
-  margin-top: 4rem; /* Move the options lower to avoid overlap with the toggle button */
-}
-
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar nav ul li {
-  margin: 1rem 0;
-}
-
-.sidebar nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.sidebar nav ul li a:hover {
-  color: #ff6f91;
+  background-color: var(--surface-color);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  z-index: 999;
+  padding-top: 80px; /* Space for header if needed, or just top padding */
 }
 
 .sidebar.open {
   left: 0;
 }
 
-.sidebar.open + .sidebar-button {
-  left: 170px; /* Adjust button position to match the new sidebar width */
+.sidebar nav ul {
+  list-style: none;
 }
 
-/* Adjusting layout for sidebar pop-up */
+.sidebar nav ul li {
+  border-bottom: 1px solid var(--background-color);
+}
+
+.sidebar nav ul li a {
+  display: block;
+  padding: 1rem 2rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.sidebar nav ul li a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding-left: 2.5rem; /* Slide effect */
+}
+
+/* Main Content Styling */
 main {
-  transition: margin-left 0.3s ease;
-  margin-left: 0;
-}
-
-.sidebar.open ~ main {
-  margin-left: 160px; /* Adjust main content shift to match the new sidebar width */
-}
-
-main {
+  flex: 1;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 section {
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  padding: 2rem;
   margin-bottom: 2rem;
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-left: 5px solid var(--primary-color);
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(233, 30, 99, 0.2);
 }
 
 h2 {
-  color: #ff6f61;
-}
-
-#video-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #ffb6c1; /* Lighter pink footer */
-  color: #fff;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
   position: relative;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  padding-bottom: 0.5rem;
 }
 
-/* Cute Elements */
-section {
-  border: 2px dashed #ff6f61;
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 p {
-  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-light);
 }
 
-iframe {
-  border: 3px solid #ff6f61;
-  border-radius: 8px;
+strong {
+  color: var(--primary-color);
+}
+
+/* Video Container */
+#video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+}
+
+#video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
 }
