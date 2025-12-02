@@ -180,7 +180,6 @@ section {
 }
 
 section:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(233, 30, 99, 0.2);
 }
 
